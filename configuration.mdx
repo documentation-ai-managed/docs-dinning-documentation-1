@@ -1,0 +1,139 @@
+---
+title: Configuration and Customization
+description: Learn how to tailor your documentation space with custom settings, themes, and integrations to match your project needs.
+---
+
+## Overview
+
+Customize ดีเจ Dinning Documentation to align with your project's branding and workflow. Adjust themes using your brand color `#3B82F6`, manage user access, and connect third-party services. These settings ensure your documentation reflects your identity while maintaining security and functionality.
+
+<Callout kind="tip">
+  Save changes in your project settings dashboard to apply them site-wide.
+</Callout>
+
+## Branding and Theme Options
+
+Tailor the visual appearance with custom themes. Set primary colors, logos, and fonts to match your brand.
+
+<Columns cols={3}>
+  <Card title="Primary Color" icon="palette" href="/docs/branding/colors">
+    Define your main brand color like `#3B82F6` for buttons and headers.
+  </Card>
+  <Card title="Logo Upload" icon="upload" href="/docs/branding/logo">
+    Replace the default logo with your high-resolution PNG or SVG.
+  </Card>
+  <Card title="Font Customization" icon="type" href="/docs/branding/fonts">
+    Select from Google Fonts or upload custom font files.
+  </Card>
+</Columns>
+
+Configure themes via the `config.json` file:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "logoUrl": "https://your-domain.com/logo.png",
+      "fontFamily": "Inter, sans-serif"
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    primaryColor: "#3B82F6"
+    logoUrl: "https://your-domain.com/logo.png"
+    fontFamily: "Inter, sans-serif"
+  ```
+</CodeGroup>
+
+## User Roles and Permissions
+
+Control access with predefined roles. Assign permissions to team members for editing, viewing, or administering content.
+
+| Role          | View Pages | Edit Content | Manage Users | Delete Pages |
+|---------------|------------|--------------|--------------|--------------|
+| Viewer        | ✅        | ❌           | ❌           | ❌           |
+| Editor        | ✅        | ✅           | ❌           | ❌           |
+| Admin         | ✅        | ✅           | ✅           | ✅           |
+
+<Steps>
+  <Step title="Create Role" icon="user-plus">
+    Navigate to **Settings > Users** and select **Add Role**.
+  </Step>
+  <Step title="Assign Permissions" icon="shield">
+    Toggle permissions for pages, edits, and admin access.
+  </Step>
+  <Step title="Invite Users" icon="mail">
+    Send invites with the new role applied automatically.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Admins inherit all permissions. Review assignments regularly to maintain security.
+</Callout>
+
+## Third-Party Integrations
+
+Connect external services for analytics, search, and authentication. Enable them through the integrations panel.
+
+<Tabs>
+  <Tab title="Analytics" icon="bar-chart-3">
+    Track visitor metrics with Google Analytics or similar.
+
+    ```javascript
+    // Add to config.json
+    {
+      "integrations": {
+        "analytics": {
+          "provider": "google",
+          "trackingId": "YOUR_TRACKING_ID"
+        }
+      }
+    }
+    ```
+
+    Replace `YOUR_TRACKING_ID` with your actual ID.
+  </Tab>
+  <Tab title="Search" icon="search">
+    Enhance search with Algolia.
+
+    <CodeGroup tabs="JavaScript,cURL">
+      ```javascript
+      const algoliaConfig = {
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY'
+      };
+      ```
+      ```bash
+      curl -X POST https://your-domain.com/api/search/setup \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -d '{"appId": "YOUR_APP_ID"}'
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Authentication" icon="lock">
+    Integrate OAuth providers.
+
+    ```yaml
+    auth:
+      providers:
+        - name: "GitHub"
+          clientId: "YOUR_GITHUB_CLIENT_ID"
+          clientSecret: "YOUR_GITHUB_CLIENT_SECRET"
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Custom Integrations" default-open="false">
+  For custom webhooks, use environment variables:
+
+  ```bash
+  DJ_WEBHOOK_URL=https://your-webhook-url.com/endpoint
+  DJ_WEBHOOK_SECRET=your-secret-here
+  ```
+
+  Restart your server after changes.
+</Expandable>
+
+These configurations make your documentation space flexible and integrated. Test changes in a staging environment before production deployment.

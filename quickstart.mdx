@@ -1,0 +1,114 @@
+---
+title: Quickstart Guide
+description: Get started quickly by setting up your first documentation space and creating your initial content.
+---
+
+## Overview
+
+Get up and running with ดีเจ Dinning Documentation in minutes. Follow these steps to create your account, set up a new documentation project, and publish your first page. This guide assumes you have a web browser ready.
+
+<Callout kind="tip">
+  Bookmark your dashboard after login for quick access to your projects.
+</Callout>
+
+## Create Your Account
+
+Start by signing up for ดีเจ Dinning Documentation.
+
+<Steps>
+  <Step title="Visit the signup page" icon="globe">
+    Navigate to the [ดีเจ Dinning signup page](https://app.djdinning.com/signup).
+  </Step>
+  <Step title="Enter your details" icon="user">
+    Provide your email address, create a strong password, and complete any verification steps.
+  </Step>
+  <Step title="Verify your email" icon="mail">
+    Check your inbox for a verification email and click the link to activate your account.
+  </Step>
+  <Step title="Log in" icon="log-in">
+    Return to the login page and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Create a New Documentation Project
+
+Once logged in, create your first project to organize your docs.
+
+<Steps>
+  <Step title="Access the dashboard" icon="home">
+    From the sidebar, click **New Project**.
+  </Step>
+  <Step title="Name your project" icon="edit-3">
+    Enter a project name like `My App Docs` and select a starter template if desired.
+  </Step>
+  <Step title="Configure settings" icon="settings">
+    Choose your preferred language and theme. ดีเจ Dinning supports custom domains for production.
+  </Step>
+  <Step title="Create project" icon="plus">
+    Click **Create** to generate your documentation space.
+  </Step>
+</Steps>
+
+## Add and Edit Your First Page
+
+Populate your project with content using the built-in editor.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit">
+    <Steps>
+      <Step title="Create a page">
+        In your project, click **New Page** and select **Markdown**.
+      </Step>
+      <Step title="Edit content">
+        Use the WYSIWYG editor to add headings, lists, and images. Preview changes in real-time.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Code Editor" icon="code">
+    Switch to the code view for advanced MDX features.
+
+    <CodeGroup tabs="MDX,Markdown">
+```mdx
+---
+title: Welcome
+description: Your first page.
+---
+
+## Hello World
+
+This is your **first documentation page** in ดีเจ Dinning.
+```
+```markdown
+# Welcome
+
+This is your **first documentation page** in ดีเจ Dinning.
+```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Save frequently with `Cmd+S` (`Ctrl+S` on Windows) to avoid losing work.
+</Callout>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Customize Themes" icon="palette" href="/docs/themes">
+    Apply brand colors like `#3B82F6` and custom layouts.
+  </Card>
+  <Card title="Add Components" icon="puzzle" href="/docs/components">
+    Use rich MDX components for interactive docs.
+  </Card>
+  <Card title="Publish & Share" icon="share-2" href="/docs/publishing">
+    Deploy to a custom domain and invite collaborators.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Login fails?** Clear browser cache and try incognito mode.
+  - **Page not saving?** Check your internet connection and API limits.
+  - Need help? Contact support at support@djdinning.com.
+</Expandable>

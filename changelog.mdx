@@ -1,0 +1,142 @@
+---
+title: Changelog
+description: Stay informed about the latest updates, new features, and improvements in ดีเจ Dinning Documentation.
+---
+
+## Recent Updates
+
+Track all changes to ดีเจ Dinning Documentation here. You receive automatic notifications for major releases. Review the details below to understand new capabilities and required actions.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Tabs>` and `<CodeGroup>` components for multi-platform examples
+- Introduced `<Columns>` layout for feature grids and navigation cards
+- Enhanced Mermaid diagram support with safer parsing rules
+
+## Improvements
+
+- Optimized rendering speed by `>30%` for large documentation sites
+- Better error handling for invalid JSX in MDX files
+
+## Bug Fixes
+
+- Fixed parsing errors from unescaped `{` and `}` characters
+- Resolved heading hierarchy issues in nested components
+
+</Update>
+
+<Update label="2024-09-25" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated `<Steps>` component for tutorial workflows
+- Added `<ParamField>` and `<ResponseField>` for API documentation
+
+## Bug Fixes
+
+- Corrected self-closing tag issues in `<Card>` and `<Callout>`
+- Fixed nested code block rendering with 4-backtick fences
+
+</Update>
+
+<Update label="2024-09-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core MDX parsing with YAML frontmatter support
+- Essential components: `<Callout>`, `<Card>`, `<Image>`
+- Full Lucide icon library integration
+
+## Breaking Changes
+
+- Strict enforcement of double quotes in JSX attributes
+
+</Update>
+
+## Upcoming Features
+
+Stay ahead with our roadmap. You can contribute ideas via GitHub.
+
+<Columns cols={3}>
+  <Card title="v1.3.0" icon="zap" href="https://github.com/dj-dinning/docs/issues">
+    Real-time collaboration and live previews.
+  </Card>
+  <Card title="v1.4.0" icon="shield" href="https://github.com/dj-dinning/docs/milestones">
+    Advanced security scanning for secrets in docs.
+  </Card>
+  <Card title="v2.0.0" icon="rocket" href="https://github.com/dj-dinning/docs/roadmap">
+    AI-assisted documentation generation.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Enable notifications in your GitHub repo settings to get updates on new releases.
+</Callout>
+
+## Upgrade Guide
+
+Follow these steps to update your ดีเจ Dinning Documentation site. Test in a staging environment first.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Create a full backup of your repository.
+
+    ```bash
+    git clone your-repo.git backup-docs
+    ```
+  </Step>
+  <Step title="Update Package" icon="package">
+    Install the latest version using your preferred package manager.
+  </Step>
+  <Step title="Verify Components" icon="check-circle">
+    Run a build and check for parsing errors.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    ```bash
+    npm install @dj-dinning/docs@latest
+    npm run build
+    ```
+  </Tab>
+  <Tab title="Yarn" icon="package">
+    ```bash
+    yarn add @dj-dinning/docs@latest
+    yarn build
+    ```
+  </Tab>
+  <Tab title="pnpm" icon="package">
+    ```bash
+    pnpm add @dj-dinning/docs@latest
+    pnpm build
+    ```
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="CLI,Docker">
+  ```bash
+  npx @dj-dinning/docs upgrade
+  ```
+  ```dockerfile
+  docker pull dj-dinning/docs:latest
+  docker run --rm -v $(pwd):/docs dj-dinning/docs:latest upgrade
+  ```
+</CodeGroup>
+
+## Detailed Changelog
+
+<ExpandableGroup>
+  <Expandable title="Older Releases" default-open="false">
+
+Access full history on GitHub. Key highlights include:
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v0.9.0 | 2024-08-20 | Initial component library   |
+| v0.8.0 | 2024-08-05 | YAML frontmatter validation |
+
+  </Expandable>
+</ExpandableGroup>
